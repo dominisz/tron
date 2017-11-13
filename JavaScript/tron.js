@@ -9,7 +9,7 @@ class Player {
         this.grid;
         this.numberOfPlayers;
         this.myPlayer;
-
+        
         this.playerX = 0;
         this.playerY = 0;
 
