@@ -12,12 +12,17 @@ class Player {
     private static final int NO_COORDINATE = -1;
     private static final String MARRIAGE_ADVENTURE = "Marriage is an adventure, like going to war.";
 
+    private static final Move[] FIRST_DOWN = {Move.LEFT, Move.RIGHT, Move.DOWN, Move.UP};
+    private static final Move[] FIRST_UP = {Move.LEFT, Move.RIGHT, Move.UP, Move.DOWN};
+
     private Scanner in;
     private int[][] grid;
     private int numberOfPlayers;
     private int myPlayer;
     private int playerX;
     private int playerY;
+    private boolean firstRound = true;
+    private Move[] moves;
 
     public static void main(String args[]) {
         Player player = new Player();
@@ -26,8 +31,6 @@ class Player {
 
     private Player() {
         in = new Scanner(System.in);
-        playerX = 0;
-        playerY = 0;
         initializeGrid();
     }
 
@@ -61,6 +64,11 @@ class Player {
                 playerY = Y1;
             }
         }
+
+        if (firstRound) {
+            firstRound = false;
+            moves = playerY < GRID_HEIGHT / 2 ? FIRST_DOWN : FIRST_UP;
+        }
     }
 
     private boolean moveAllowed(Move move) {
@@ -70,7 +78,7 @@ class Player {
     }
 
     private String chooseMove() {
-        for (Move move : Move.values()) {
+        for (Move move : moves) {
             if (moveAllowed(move)) {
                 return move.name();
             }
