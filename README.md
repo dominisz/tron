@@ -16,6 +16,12 @@ Rejestracja na stronie Codingame nie jest obowiązkowa, ale napisane programy mo
 # Kody źródłowe
 Katalog Java zawiera pliki źródłowe napisane w Javie. Katalog JavaScript to program napisany w JavaScripcie.
 
-# Wersja pierwsza
+# Wersje programu
+
+## Wersja pierwsza
 
 W pierwszej wersji programu sprawdzamy jedynie, czy sąsiednie pola na planszy są wolne. Jeżeli tak, to ruch jest możliwy. Pola sprawdzane są w kolejności: lewe, prawe, górne, dolne. Ta wersja programu umożliwia przejście do "Wood 1 League" i zatrzymanie się tuż przed bossem ;-)
+
+## Wersja druga
+
+Kolejne "naiwne" rozwiązanie: jeżeli rozpoczynamy grę w górnej części planszy, to wyszukujemy dozwolone ruchy w kolejności LEFT, RIGHT, DOWN, UP. Jeżeli rozpoczynamy w dolnej części planszy, to LEFT, RIGHT, UP, DOWN.
