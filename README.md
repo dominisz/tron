@@ -25,3 +25,11 @@ W pierwszej wersji programu sprawdzamy jedynie, czy sąsiednie pola na planszy s
 ## Wersja druga
 
 Kolejne "naiwne" rozwiązanie: jeżeli rozpoczynamy grę w górnej części planszy, to wyszukujemy dozwolone ruchy w kolejności LEFT, RIGHT, DOWN, UP. Jeżeli rozpoczynamy w dolnej części planszy, to LEFT, RIGHT, UP, DOWN.
+
+## Wersja trzecia
+
+Wykorzystajmy [algorytm flood fill](https://pl.wikipedia.org/wiki/Flood_fill) do sprawdzenia, w którym kierunku należy się udać, aby trafić na obszar z największą liczbą wolnych pól. Najbardziej jest to przydatne w momencie dojścia do krawędzi planszy lub pozostawionego wcześniej śladu. Dzięki temu algorytmowi możemy zliczyć wszystkie wolne pola, do których możemy dojść.
+
+Na poniższym schemacie gracz pomarańczowy idąc w prawo dochodzi do śladu drugiego gracza. Może wybrać ruch w dół na zielony obszar lub w górę na niebeski obszar. Niebieski obszar jest większy.
+
+![flood fill schema](floodfill.png)
